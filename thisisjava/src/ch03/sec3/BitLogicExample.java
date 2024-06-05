@@ -41,6 +41,7 @@ public class BitLogicExample {
 		System.out.println("================================");
 		
 		//BiteShift2 (각 byte를 부호없는 정수로 출력)
+		//https://blog.naver.com/badwin/221179926161
 		int value = 722; //[00000000][00000000][00000011][00000000]
 	}
 }
