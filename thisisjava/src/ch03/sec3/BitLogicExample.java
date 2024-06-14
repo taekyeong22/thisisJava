@@ -45,6 +45,26 @@ public class BitLogicExample {
 		//0 0 1 0  0  0  0  0   1   1    0 ...   => 722
 		//[00000000][00000000][00000011][00000100]
 		//     0         0        3         4       -==> 부호없는 정수?
-		int value = 722; 
+		int value = 772; 
+		
+	    //우측으로 3byte(24bit) 이동 후 [00000000] 읽기 
+		byte byte1 = (byte) (value >>> 24);
+		int int1 = byte1 & 255;
+		System.out.println(int1);
+	
+	    //우측으로 2byte(16bit) 이동 후 [00000000] 읽기 
+		byte byte2 = (byte) (value >>> 16);
+		int int2 = byte2 & 255;
+		System.out.println(int2);
+		
+	    //우측으로 1byte(8bit) 이동 후 [00000011] 읽기 
+		byte byte3 = (byte) (value >>> 8);
+		int int3 = byte3 & 255;
+		System.out.println(int3);
+		
+	    //끝 [00000100] 읽기 
+		byte byte4 = (byte) value;
+		int int4 = byte4 & 255;
+		System.out.println(int4);		
 	}
 }
